@@ -1,11 +1,11 @@
 <?php
 
 // ABRE CONEXION CON LA BASE DE DATOS
-$conexion = mysqli_connect("localhost", "root", "");
-mysqli_select_db($conexion, "pruebas");
+$conexion = mysqli_connect("localhost", "root", ""); // Tus datos de conexion a la base de datos
+mysqli_select_db($conexion, "pruebas"); // Tu base de datos
 
 // CONSULTA
-$sql = "SELECT * FROM usuarios";
+$sql = "SELECT * FROM usuarios"; // Consulta a la base de datos
 
 // SE GUARDAN LOS RESULTADOS DE LA CONSULTA
 $resultado = mysqli_query($conexion, $sql);
@@ -31,7 +31,7 @@ if(isset($_POST["exportar"])) { // VALIDA QUE SE OPRIMIO EL BOTON
 
 		$mostrar = false;
 
-		foreach ($usuarios as $usuario) {
+		foreach ($usuarios as $usuario) { // Recorrido e insercion de los registros en el Archivo
 			if(!$mostrar) {
 				echo implode("\t", array_keys($usuario)). "\n";
 				$mostrar = true;
@@ -76,16 +76,3 @@ if(isset($_POST["exportar"])) { // VALIDA QUE SE OPRIMIO EL BOTON
 		</button>
 	</form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
